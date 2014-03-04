@@ -1,0 +1,20 @@
+development:
+    adapter: postgresql
+    database: fragment_dev
+    username: fragment
+    password: fragfrag
+    host: localhost
+
+test:
+    adapter: postgresql
+    database: fragment_test
+    username: fragment
+    password: fragfrag
+    host: localhost
+
+production:
+    adapter: postgresql
+    database: fragment
+    username: fragment
+    password: fragfrag
+    host: localhost
