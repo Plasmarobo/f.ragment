@@ -1,23 +1,6 @@
-class Identity
-  include Mongoid::Document
-  include Mongoid::Timestamps
+class Identity < ActiveRecord::Base
 
-  belongs_to :user, index: true
-
-  field :uid, type: String
-  field :provider, type: String
-  field :token, type: String
-  field :secret, type: String
-  field :expires_at, type: DateTime
-
-  field :email, type: String
-  field :image, type: String
-  field :nickname, type: String
-  field :first_name, type: String
-  field :last_name, type: String
-
-  index({ uid: 1, provider: 1 }, { unique: true })
-
+  belongs_to :user
 
   def self.from_omniauth(auth)
     identity = where(auth.slice(:provider, :uid)).first_or_create do |identity|

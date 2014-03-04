@@ -4,7 +4,7 @@ Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
-  config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
+  config.mailer_sender = ENV["MAIL_SENDER"]
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
@@ -13,8 +13,8 @@ Devise.setup do |config|
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
-  require 'devise/orm/mongoid'
-
+  require 'devise/orm/active_record'
+  #config.secret_key = ENV["DEVISE_SECRET"]
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
@@ -92,7 +92,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = "7bd2a3735ed5f08884f9e57378ea53b27c27aaef694502429f51a632340e519bb57cbe6200231877152f2da0591c909bc3753e65c8e96f39a625cd5a1a1ba131"
+  config.pepper = ENV["PEPPER"]
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -227,7 +227,9 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'], scope: 'email,user_birthday,read_stream'
-  config.omniauth :twitter, ENV['CONSUMER_KEY'], ENV['CONSUMER_SECRET']
+  config.omniauth :twitter, ENV['TWITTER_KEY'], ENV['TWITTER_SECRET']
+  config.omniauth :google_oauth2, ENV['GOOGLE_KEY'], ENV['GOOGLE_SECRET']
+  config.omniauth :steam, ENV["STEAM_KEY"]
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

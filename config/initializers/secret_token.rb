@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-FRagment::Application.config.secret_key_base = '614808fb052d5cabebd63c94ffc9b222280b8ea1e851d8837cec1df3dcd461ef53c8937199141ad5ade04777ddcf093f1c2e87e0ee0e4334c2f44557daed81d4'
+FRagment::Application.config.secret_key_base = ENV["SECRET_KEY_BASE"]

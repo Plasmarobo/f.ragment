@@ -1,4 +1,4 @@
-class Ability
+class Ability < ActiveRecord::Base
   include CanCan::Ability
 
   def initialize(user)
