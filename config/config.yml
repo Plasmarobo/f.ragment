@@ -3,6 +3,7 @@ defaults: &defaults
     - admin
     - moderator
     - user
+    - banned
   default_role: user
 
 development:

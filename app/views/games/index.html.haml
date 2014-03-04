@@ -1,0 +1,27 @@
+%h1 Listing games
+
+%table
+  %tr
+    %th Gamesettings
+    %th Name
+    %th Difficulty
+    %th User
+    %th Multiplayer
+    %th
+    %th
+    %th
+
+  - @games.each do |game|
+    %tr
+      %td= game.gamesettings_id
+      %td= game.name
+      %td= game.difficulty
+      %td= game.user_id
+      %td= game.multiplayer_id
+      %td= link_to 'Show', game
+      %td= link_to 'Edit', edit_game_path(game)
+      %td= link_to 'Destroy', game, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Game', new_game_path

@@ -4,6 +4,7 @@ last = ENV["LASTNAME"].dup
 password = ENV["ADMIN_PASS"].dup
 admin = User.new(
   email: email,
+  username: 'plasmarobo',
   first_name: name, 
   last_name: last, 
   roles: ['admin'], 

@@ -1,6 +1,8 @@
 FRagment::Application.routes.draw do
   
   
+  resources :games
+
   authenticated :user do
     root to: 'home#index', as: :authenticated_root
   end

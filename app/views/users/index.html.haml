@@ -4,6 +4,7 @@
     %thead
       %tr
         %th Username
+        %th Real Name
         %th Email
         %th Registered
         %th Role
@@ -12,7 +13,8 @@
     %tbody
       - @users.each do |user|
         %tr
-          %td= link_to user.full_name, user
+          %td= link_to user.username, user
+          %td= user.full_name
           %td= user.email
           %td= user.created_at.to_date
           %td= user.roles.join(', ').titleize unless user.roles.first.nil?

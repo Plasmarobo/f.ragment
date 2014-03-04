@@ -4,14 +4,13 @@ module User::Roles
   included do
   end
 
-
   def roles=(roles)
     self.roles_mask = (roles & AppConfig.roles).map { |r| 2**AppConfig.roles.index(r) }.inject(0, :+)
   end
 
   def roles
     AppConfig.roles.reject do |r|
-      ((roles_mask || 0) & 2**AppConfig.roles.index(r)).zero?
+      ((roles_mask.to_i || 0) & 2**AppConfig.roles.index(r)).zero?
     end
   end
 
