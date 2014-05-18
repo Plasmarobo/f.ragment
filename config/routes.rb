@@ -1,6 +1,11 @@
 FRagment::Application.routes.draw do
   
     
+  get "fragment_api/gen_player"
+  get "fragment_api/gen_system"
+  get "fragment_api/validate"
+  get "fragment_api/compile"
+  get "fragment_api/sync_time"
   resources :games
 
   authenticated :user do
@@ -19,6 +24,7 @@ FRagment::Application.routes.draw do
 
   resources :users
   get "home/index"
+  get "games/play/:id" => 'games#play'
   get "games/play"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

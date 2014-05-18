@@ -1,5 +1,4 @@
-%h1 F.ragment
-.play_window
+.play_window.col-lg-12
   .story_window.common_window
     .story_background
       .story_pad
@@ -7,24 +6,26 @@
       .story_portrait_layer
       .story_message_window  
   .game_window.common_window
-    .game_timer
-      .min
-        00
-      :
-      .sec
-        00
-      :
-      .dec
-        00
-    .game_fragment_pane
-      .game_pane_title
-        f.ragments
-    .game_program_pane
-      .game_pane_title
-        Program 
-      .game_program_tree
-      .compile.button.success
-        .button_center.success_grad
-          COMPILE
+    .row
+      .col-md-4
+      .col-md-4
+        .game_timer.normal_timer
+          00:00:00
+      .col-md-4
+    .row
+      .game_common_pane.game_fragment_pane.col-md-4
+        .game_pane_title
+          f.ragments
+          .game_fragment_list
+      .game_common_pane.game_program_pane.col-md-5
+        .game_pane_title
+          Program 
+        .game_program_tree
+        .compile.button.select_grad
+          .button_center.select
+            COMPILE
+      .game_common_pane.game_status_pane.col-md-3
+        .game_pane_title
+          Status
 
 

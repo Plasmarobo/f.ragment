@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140304151300) do
+ActiveRecord::Schema.define(version: 20140304153258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "games", force: true do |t|
+    t.integer  "gamesettings_id"
+    t.string   "name"
+    t.integer  "difficulty"
+    t.integer  "user_id"
+    t.integer  "multiplayer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "identities", force: true do |t|
     t.string   "uid"
@@ -27,6 +37,37 @@ ActiveRecord::Schema.define(version: 20140304151300) do
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "levels", force: true do |t|
+    t.string   "name"
+    t.integer  "random_seed"
+    t.integer  "dialog_id"
+    t.integer  "time_limit"
+    t.integer  "matrix_speed"
+    t.integer  "program_id"
+    t.string   "theme"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "multiplayers", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.integer  "permission_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "programs", force: true do |t|
+    t.string   "name"
+    t.integer  "exec_time"
+    t.string   "result_hash"
+    t.integer  "item_id"
+    t.integer  "reward"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

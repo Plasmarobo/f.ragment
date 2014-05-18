@@ -1,8 +1,13 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$select_primary: #009900;
-$select_secondary: #006600;
+@import 'compass';
+
+$background_color: #FFFFFF;
+
+$select_primary: #00EE11;
+$select_secondary: #33AA33;
+$select_solid: #00DD00;
 $select_text: #CCFF99;
 
 $delete_primary: #CC0000;
@@ -17,22 +22,34 @@ $timer_normal: #00CC00;
 $timer_warning: #FFCC00;
 $timer_critical: #FF1919;
 
+.games
+{
+  background-color: $background_color;
+}
+
 .button {
-  
+  padding: 10px;
+  width:256px;
+  height:64px;
+
 }
 
 .button_center
 {
-  padding:32px;
+  text-align: center;
+  margin: auto;
+  height:44px;
+  width:236px;
 }
 
 .select {
-  background-color: $select_primary;
+  background-color: $select_solid;
   color: $select_text;
 }
 
 .select_grad
 {
+  @include filter-gradient(#c9de96, #398235, vertical);
   @include background-image(linear-gradient(left top, $select_primary, $select_secondary));
 }
 
@@ -69,19 +86,19 @@ $timer_critical: #FF1919;
 
 .play_window
 {
-  background-color: #000000;
+ 
 }
 
 .common_window
 {
-  background-color: #000066;
+  background-color: $background_color;
   width: 1280px;
   height: 720px;
 }
 
 .story_window
 {
-  
+  display:none;
 }
 
 .story_background
@@ -114,7 +131,9 @@ $timer_critical: #FF1919;
 }
 .game_timer
 {
-  font-size:32px;
+  font-size:64px;
+  text-align:center;
+  padding: 0;
 }
 
 .normal_timer
@@ -129,14 +148,33 @@ $timer_critical: #FF1919;
 {
   color: $timer_critical;
 }
+.game_common_pane
+{
+  border: solid;
+  border-weight: 1px;
 
+}
 .game_fragment_pane
 {
-  
+  min-height:600px; 
 }
+
+.game_fragment_list
+{
+  min-height:564px;
+  border: solid;
+  border-weight: 1px;
+}
+
 .game_program_pane
 {
-  
+  overflow-vertical: scroll;
+  min-height:600px; 
+}
+
+.game_status_pane
+{
+  min-height:600px; 
 }
 .game_pane_title
 {
@@ -144,10 +182,14 @@ $timer_critical: #FF1919;
 }
 .game_program_tree
 {
-  
+  overflow-vertical: scroll;
+  min-height:500px;
+  border-weight:1px;
+  border: solid;
 }
 .compile
 {
   border:2px;
   border-color: $select_secondary;
+  font-size:32pt;
 }

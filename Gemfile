@@ -7,6 +7,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
+gem 'compass-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -43,6 +44,3 @@ gem 'omniauth-steam'
 gem 'omniauth-google-oauth2'
 gem 'hashugar', github: "alex-klepa/hashugar"
 gem 'figaro'
-group :assets do
-  gem 'compass-rails'
-end
