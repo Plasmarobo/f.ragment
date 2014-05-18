@@ -2,10 +2,9 @@
 
 FactoryGirl.define do
   factory :program do
-    name "MyString"
-    exec_time 1
-    result_hash "MyString"
-    item_id 1
-    reward 1
+    game_id 1
+    user_id 1
+    size_limit 1
+    system_fragments 1
   end
 end

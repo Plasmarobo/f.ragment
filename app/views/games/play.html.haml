@@ -1,3 +1,6 @@
+-if (@preferences.audio?)
+  %audio{ class: "sound", loop: "loop"}
+    %source{src:"/assets/audio/#{@background_loop}", type:"audio/mpeg"}
 .play_window.col-lg-12
   .story_window.common_window
     .story_background
@@ -5,7 +8,21 @@
       .story_content
       .story_portrait_layer
       .story_message_window  
+  .loading_window.common_window
+    .row
+      .col-lg-4
+      .col-lg-4
+        .progress
+      .col-lg-4
   .game_window.common_window
+    .row
+      .col-sm-10
+      .col-sm-1
+        .mute_icon
+          %img{src: "/assets/mute_icon.png", class: "mute"}
+      .col-sm-1
+        .settings_icon
+          %img{src: "/assets/settings_icon.png", class: "settings"}
     .row
       .col-md-4
       .col-md-4
@@ -16,7 +33,7 @@
       .game_common_pane.game_fragment_pane.col-md-4
         .game_pane_title
           f.ragments
-          .game_fragment_list
+          .game_fragment_list.game_list
       .game_common_pane.game_program_pane.col-md-5
         .game_pane_title
           Program 
@@ -27,5 +44,6 @@
       .game_common_pane.game_status_pane.col-md-3
         .game_pane_title
           Status
+        .game_status_list.game_list
 
 

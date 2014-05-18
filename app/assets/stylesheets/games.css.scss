@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'compass';
 
-$background_color: #FFFFFF;
+$background_color: #224488;
 
 $select_primary: #00EE11;
 $select_secondary: #33AA33;
@@ -31,7 +31,6 @@ $timer_critical: #FF1919;
   padding: 10px;
   width:256px;
   height:64px;
-
 }
 
 .button_center
@@ -95,7 +94,16 @@ $timer_critical: #FF1919;
   width: 1280px;
   height: 720px;
 }
+.loading_window
+{
+  
+}
 
+.progress
+{
+  background-color: #FFFFFF;
+  height:64px;
+}
 .story_window
 {
   display:none;
@@ -127,7 +135,7 @@ $timer_critical: #FF1919;
 
 .game_window
 {
-  
+  display:none;
 }
 .game_timer
 {
@@ -157,13 +165,23 @@ $timer_critical: #FF1919;
 .game_fragment_pane
 {
   min-height:600px; 
+  border-right: none;
 }
 
-.game_fragment_list
+.game_list
 {
   min-height:564px;
   border: solid;
   border-weight: 1px;
+}
+
+.game_fragment_list
+{
+  
+}
+.game_status_list
+{
+  
 }
 
 .game_program_pane
@@ -175,6 +193,7 @@ $timer_critical: #FF1919;
 .game_status_pane
 {
   min-height:600px; 
+  border-left: none;
 }
 .game_pane_title
 {
@@ -186,6 +205,7 @@ $timer_critical: #FF1919;
   min-height:500px;
   border-weight:1px;
   border: solid;
+
 }
 .compile
 {

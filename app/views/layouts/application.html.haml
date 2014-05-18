@@ -14,7 +14,7 @@
         %header.col-lg-12
           = render 'layouts/navigation'
       .row
-        %main.col-lg-12{:role => "main"}
+        %main.col-lg-12{:role => "main", :class => "#{controller_name} #{action_name}"}
           = render 'layouts/messages'
           = yield
       .row

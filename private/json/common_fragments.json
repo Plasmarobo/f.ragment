@@ -1,0 +1,12 @@
+"root" : 
+  [
+      {
+        "display_text" : "door_lock = 1",
+        "function" : "var door_lock = 1",
+        "time" : 1,
+        "length" : 1,
+        "system" : false
+      },
+
+  ]
+}

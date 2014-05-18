@@ -13,7 +13,8 @@ class GamesController < ApplicationController
   end
 
   def play
-    
+    @background_loop = "tetris.mp3"
+    @preferences = UserPreferences.new
   end
 
   # GET /games/new

@@ -1,0 +1,36 @@
+"root" : {
+  "program" : {
+    "fragments" : 
+    [
+      {
+        "display_text" : "door_lock = 1",
+        "function" : "var door_lock = 1",
+        "time" : 1,
+        "length" : 1
+      },
+      { "display_text" : "alarm = 1",
+        "function" : "var alarm = 1",
+        "time" : 1,
+        "length" : 1 
+      }
+    ],
+    "variables" :
+    [
+      "door_lock",
+      "alarm",
+      "system_time"
+    ],
+    "size" : 7,
+    "system_fragment" : 1,
+    "time_limit" : 300,
+    "condition_text" : "Set door_lock to 0, don't trigger the alarm!",
+    "condition_function" : "if (1 == door_lock && 0 == alarm) {victory();}"
+  },
+  "music" : {
+    "file" : "tetris.mp3"
+  },
+  "background" : {
+    "file" : "background.png",
+    "color" : "#446644"
+  }
+}

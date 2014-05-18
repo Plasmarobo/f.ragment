@@ -1,9 +1,6 @@
 %p#notice= notice
 
 %p
-  %b Gamesettings:
-  = @game.gamesettings_id
-%p
   %b Name:
   = @game.name
 %p
@@ -12,9 +9,7 @@
 %p
   %b User:
   = @game.user_id
-%p
-  %b Multiplayer:
-  = @game.multiplayer_id
+
 
 = link_to 'Edit', edit_game_path(@game)
 \|

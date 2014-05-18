@@ -1,11 +1,10 @@
 class CreatePrograms < ActiveRecord::Migration
   def change
     create_table :programs do |t|
-      t.string :name
-      t.integer :exec_time
-      t.string :result_hash
-      t.integer :item_id
-      t.integer :reward
+      t.integer :game_id
+      t.integer :user_id
+      t.integer :size_limit
+      t.integer :system_fragments
 
       t.timestamps
     end

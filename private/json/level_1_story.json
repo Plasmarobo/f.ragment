@@ -1,0 +1,90 @@
+"level_1_story" {
+  "background" : "story_1_bkg.png",
+  "events" : [
+    {
+      "type" : "music",
+      "file" : "tense.mp3"
+    },
+    {
+      "type" : "fade_in",
+      "name" : "lisa",
+      "portrait" : "lisa_normal.png",
+      "speed" : 2
+    }
+    {
+      "type" : "dialog",
+      "name" : "lisa",
+      "tone" : 8,
+      "text" : [
+        {
+          "speed" : 1,
+          "html" : "I don't think you <i>really</i> understand. It's not that hard."
+        },
+        { 
+          "speed" : 2,
+          "html" : "I think that it's very..." 
+        }
+      ]
+    },
+    { "type" : "clear" },
+    {
+      "type" : "sfx",
+      "file" : "crash.ogg"
+    },
+    {
+      "type" : "dialog",
+      "name" : "lisa",
+      "portrait" : "lisa_angry.png",
+      "tone" : 8,
+      "text" : [
+        {
+          "speed" : 3,
+          "html" : "What are you doing!? Stop! STOP!"
+        }
+      ]
+    },
+    { "type" : "clear" },
+    { 
+      "type" : "fade_out",
+      "name" : "lisa"
+    }
+    { 
+      "type" : "sfx", "file" : 
+      "door_slam.ogg"
+    },
+    { 
+      "type" : "fade_in",
+      "name" : "lisa",
+      "portrait" : "lisa_worried.png",
+      "speed" : 1
+    },
+    { 
+      "type" : "dialog",
+      "name" : "lisa",
+      "tone" : 8,
+      "text" : [
+        {
+          "speed" : 3,
+          "html" : "Damnit..."
+        },
+      ]
+    },
+    { 
+      "type" : "dialog",
+      "name" : "lisa",
+      "portait" : "lisa_normal.png",
+      "tone" : 8,
+      "text" : [
+        {
+          "speed" : 1,
+          "html" : "Nothing here but this old computer. Might as well try to override the lock..."
+        }
+      ]
+    },
+    { 
+      "type" : "level_start",
+      "file" : "level_1_game.json"
+    }
+  ]
+  
+}

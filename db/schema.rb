@@ -11,19 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140304153258) do
+ActiveRecord::Schema.define(version: 20140518223334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "blocks", force: true do |t|
+    t.integer  "program_id"
+    t.integer  "sequence"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "game_syncs", force: true do |t|
+    t.integer  "game_id"
+    t.datetime "start_time"
+    t.boolean  "started"
+    t.datetime "pause_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "client_start"
+    t.datetime "client_pause"
+    t.datetime "time_offset"
+  end
+
   create_table "games", force: true do |t|
-    t.integer  "gamesettings_id"
+    t.integer  "level_id"
     t.string   "name"
     t.integer  "difficulty"
     t.integer  "user_id"
-    t.integer  "multiplayer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "seed"
+    t.string   "music"
   end
 
   create_table "identities", force: true do |t|
@@ -43,10 +63,9 @@ ActiveRecord::Schema.define(version: 20140304153258) do
 
   create_table "levels", force: true do |t|
     t.string   "name"
-    t.integer  "random_seed"
-    t.integer  "dialog_id"
+    t.integer  "story_id"
     t.integer  "time_limit"
-    t.integer  "matrix_speed"
+    t.integer  "fragment_speed"
     t.integer  "program_id"
     t.string   "theme"
     t.datetime "created_at"
@@ -62,14 +81,61 @@ ActiveRecord::Schema.define(version: 20140304153258) do
     t.datetime "updated_at"
   end
 
-  create_table "programs", force: true do |t|
-    t.string   "name"
-    t.integer  "exec_time"
-    t.string   "result_hash"
-    t.integer  "item_id"
-    t.integer  "reward"
+  create_table "player_fragment_references", force: true do |t|
+    t.integer  "block_id"
+    t.integer  "playerfragment_id"
+    t.integer  "thread"
+    t.integer  "line"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "player_fragments", force: true do |t|
+    t.string   "display_text"
+    t.string   "function"
+    t.integer  "time"
+    t.integer  "length"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "programs", force: true do |t|
+    t.integer  "game_id"
+    t.integer  "user_id"
+    t.integer  "size_limit"
+    t.integer  "system_fragments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "javascript"
+  end
+
+  create_table "system_fragment_references", force: true do |t|
+    t.integer  "block_id"
+    t.integer  "systemfragment_id"
+    t.integer  "thread"
+    t.integer  "line"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "system_fragments", force: true do |t|
+    t.string   "display_text"
+    t.string   "function"
+    t.integer  "time"
+    t.integer  "length"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_preferences", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "text_speed"
+    t.string   "theme"
+    t.boolean  "autoplay"
+    t.boolean  "animation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "audio"
   end
 
   create_table "users", force: true do |t|
@@ -98,5 +164,21 @@ ActiveRecord::Schema.define(version: 20140304153258) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
+
+  create_table "workspace_entries", force: true do |t|
+    t.integer  "workspace_id"
+    t.string   "name"
+    t.string   "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "workspaces", force: true do |t|
+    t.integer  "game_id"
+    t.integer  "variable_limit"
+    t.integer  "register_limit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

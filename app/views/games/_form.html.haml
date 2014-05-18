@@ -7,9 +7,6 @@
           %li= msg
 
   .field
-    = f.label :gamesettings_id
-    = f.number_field :gamesettings_id
-  .field
     = f.label :name
     = f.text_field :name
   .field
@@ -18,8 +15,5 @@
   .field
     = f.label :user_id
     = f.number_field :user_id
-  .field
-    = f.label :multiplayer_id
-    = f.number_field :multiplayer_id
   .actions
     = f.submit 'Save'
