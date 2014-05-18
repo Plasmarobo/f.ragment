@@ -1,3 +1,153 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$select_primary: #009900;
+$select_secondary: #006600;
+$select_text: #CCFF99;
+
+$delete_primary: #CC0000;
+$delete_secondary: #FF0000;
+$delete_text: #FFFFFF;
+
+$cancel_primary: #AAAAAA;
+$cancel_secondary: #DDDDDD;
+$cancel_text: #111111;
+
+$timer_normal: #00CC00;
+$timer_warning: #FFCC00;
+$timer_critical: #FF1919;
+
+.button {
+  
+}
+
+.button_center
+{
+  padding:32px;
+}
+
+.select {
+  background-color: $select_primary;
+  color: $select_text;
+}
+
+.select_grad
+{
+  @include background-image(linear-gradient(left top, $select_primary, $select_secondary));
+}
+
+.delete {
+  background-color: $delete_primary; 
+  color: $delete_text;
+}
+
+.delete_grad
+{
+  @include background-image(linear-gradient(left top, $delete_primary, $delete_secondary));
+}
+
+.cancel {
+  background-color: $cancel_primary;
+  color: $cancel_text;
+}
+
+.cancel_grad
+{
+  @include background-image(linear-gradient(left top, $cancel_primary, $cancel_secondary));
+}
+
+
+.icon
+{
+  
+}
+
+.message_text
+{
+  
+}
+
+.play_window
+{
+  background-color: #000000;
+}
+
+.common_window
+{
+  background-color: #000066;
+  width: 1280px;
+  height: 720px;
+}
+
+.story_window
+{
+  
+}
+
+.story_background
+{
+  width:100%;
+  height:100%;
+}
+
+.story_pad
+{
+  width:100%;
+  height:75%;
+}
+.story_content
+{
+  height:25%;
+}
+.story_portrait_layer
+{
+  
+}
+.story_message_window  
+{
+  
+}
+
+.game_window
+{
+  
+}
+.game_timer
+{
+  font-size:32px;
+}
+
+.normal_timer
+{
+  color: $timer_normal;
+}
+.warning_timer
+{
+  color: $timer_warning;  
+}
+.critical_timer
+{
+  color: $timer_critical;
+}
+
+.game_fragment_pane
+{
+  
+}
+.game_program_pane
+{
+  
+}
+.game_pane_title
+{
+  
+}
+.game_program_tree
+{
+  
+}
+.compile
+{
+  border:2px;
+  border-color: $select_secondary;
+}

@@ -1,26 +1,30 @@
 %h1 F.ragment
-.outer_box
-  .canvas
-    .commands
-      .cmd_row
-        .cmd_icon
-          w
-        .w_cmd
-      .cmd_row
-        .cmd_icon
-          a
-        .a_cmd
-      .cmd_row
-        .cmd_icon
-          s
-        .s_cmd
-      .cmd_row
-        .cmd_icon
-          d
-        .d_cmd
-    .program_window
-      .code
-      .execute_button
-    .status_window
-      .register
-      .objective
+.play_window
+  .story_window.common_window
+    .story_background
+      .story_pad
+      .story_content
+      .story_portrait_layer
+      .story_message_window  
+  .game_window.common_window
+    .game_timer
+      .min
+        00
+      :
+      .sec
+        00
+      :
+      .dec
+        00
+    .game_fragment_pane
+      .game_pane_title
+        f.ragments
+    .game_program_pane
+      .game_pane_title
+        Program 
+      .game_program_tree
+      .compile.button.success
+        .button_center.success_grad
+          COMPILE
+
+

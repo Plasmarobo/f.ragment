@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby '2.1.0'
+ruby '2.1.1'
 gem 'rails', '4.0.2'
 gem 'pg'
 gem 'sass-rails'
@@ -43,3 +43,6 @@ gem 'omniauth-steam'
 gem 'omniauth-google-oauth2'
 gem 'hashugar', github: "alex-klepa/hashugar"
 gem 'figaro'
+group :assets do
+  gem 'compass-rails'
+end
